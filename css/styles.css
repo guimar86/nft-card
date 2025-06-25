@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+:root {
+  /* Primary */
+  --blue-500: hsl(215, 51%, 70%);
+  --cyan-400: hsl(178, 100%, 50%);
+
+  /* Neutral */
+  --blue-950: hsl(217, 54%, 11%);
+  --blue-900: hsl(216, 50%, 16%);
+  --blue-800: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Fonts */
+  --font-family: "Outfit";
+
+  /*Sizes*/
+  --mobile-width: 320px;
+  --tablet-width: 768px;
+  --desktop-width: 1440px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--blue-950);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-family: var(--font-family), sans-serif;
+}
+
+.card {
+  background-color: var(--blue-900);
+  padding: 20px;
+  border-radius: 1.5rem;
+  max-width: var(--mobile-width);
+}
+
+.card .image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.main-img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.image-container {
+  position: relative;
+}
+
+.view-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20%;
+  height: 20%;
+  background-image: url("../images/icon-view.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 🔥 Show .view-icon when hovering .main-img */
+.image-container:hover .view-icon {
+  opacity: 0.5;
+}
+
+.main-img:hover {
+  cursor: pointer;
+}
+
+.card p {
+  color: var(--blue-800);
+}
+
+.card-content h1:hover {
+  color: var(--cyan-400);
+  cursor: pointer;
+}
+
+.promo {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.promo :first-child {
+  color: var(--cyan-400);
+  font-size: 15px;
+}
+
+.ethereum,
+.clock {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  border-top: 2px solid var(--blue-800);
+  padding: 10px;
+}
+
+.card-footer > img {
+  width: auto;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  border: 1px solid var(--white);
+}
+
+.card-footer span {
+  color: var(--blue-500);
+}
+
+.card-footer a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.card-footer a:hover {
+  color: var(--cyan-400);
+}
